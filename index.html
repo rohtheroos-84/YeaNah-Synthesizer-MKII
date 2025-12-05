@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>YeaNah-Synthesizer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <style>
+      /* Custom Cursor Definitions */
+      body {
+        cursor: default;
+        font-family: 'VT323', monospace;
+      }
+
+      /* 
+         Exaggerated Retro Hand Cursor 
+         Using a base64 PNG of a pixel art hand, scaled up via CSS logic is hard, 
+         so we use a larger image directly.
+      */
+      .retro-cursor-pointer,
+      button,
+      input, 
+      label,
+      select,
+      a {
+        cursor: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAGFBMVEUAAAAAAAD///8AAAB3d3dERERmZmZmZmb//wCDj4eXAAAACHRSTlMAMwA1MzMzM7O0s14AAAAJcEhZcwAADsQAAA7EAZUrDhsAAABqSURBVDjLxZNRCsAgDMNWs/f/8O7BFtFVRPHjJczQlmL645Q+BC/5W2CqC178LTA1xEQDDIyO7sDydhww5QssZ+OASV9gORsHTPoCy9k4YNI/4LwCvtshT0ReM6uqiPv9+s0MCNJwi+8LDxwKAxQTS6OPAAAAAElFTkSuQmCC') 10 0, pointer !important;
+      }
+      
+      /* Force a pixelated rendering for text where possible */
+      * {
+        -webkit-font-smoothing: none;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      /* Scrollbar Retro Style */
+      ::-webkit-scrollbar {
+        width: 16px;
+        background: #dfdfdf;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #c0c0c0;
+        border: 2px solid;
+        border-color: #ffffff #404040 #404040 #ffffff;
+      }
+      ::-webkit-scrollbar-button {
+        background: #c0c0c0;
+        border: 2px solid;
+        border-color: #ffffff #404040 #404040 #ffffff;
+        height: 16px;
+      }
+      
+      /* Dark Mode Scrollbar Overrides */
+      .dark ::-webkit-scrollbar {
+        background: #111;
+      }
+      .dark ::-webkit-scrollbar-thumb {
+        background: #333;
+        border-color: #555 #000 #000 #555;
+      }
+      .dark ::-webkit-scrollbar-button {
+        background: #333;
+        border-color: #555 #000 #000 #555;
+      }
+
+      /* 3D Borders Utility Classes */
+      .win95-border {
+        box-shadow: inset 1px 1px #dfdfdf, inset -1px -1px #0a0a0a, inset 2px 2px #ffffff, inset -2px -2px #808080;
+      }
+      .win95-border-pressed {
+        box-shadow: inset 1px 1px #0a0a0a, inset -1px -1px #ffffff, inset 2px 2px #808080, inset -2px -2px #dfdfdf;
+      }
+      .win95-border-inset {
+        box-shadow: inset 1px 1px #0a0a0a, inset -1px -1px #ffffff, inset 2px 2px #808080, inset -2px -2px #dfdfdf;
+      }
+      
+      /* Dark Mode 3D Borders */
+      .dark .win95-border {
+        box-shadow: inset 1px 1px #555, inset -1px -1px #000, inset 2px 2px #777, inset -2px -2px #222;
+      }
+      .dark .win95-border-pressed {
+        box-shadow: inset 1px 1px #000, inset -1px -1px #555, inset 2px 2px #222, inset -2px -2px #777;
+      }
+      .dark .win95-border-inset {
+        box-shadow: inset 1px 1px #000, inset -1px -1px #555, inset 2px 2px #222, inset -2px -2px #777;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.556.0",
+    "clsx": "https://aistudiocdn.com/clsx@^2.1.1",
+    "react/": "https://aistudiocdn.com/react@^19.2.1/",
+    "react": "https://aistudiocdn.com/react@^19.2.1"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
