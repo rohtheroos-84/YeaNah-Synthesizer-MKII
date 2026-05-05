@@ -3,7 +3,7 @@ import { RetroWindow, RetroPanel, RetroInput, RetroTextArea, RetroSlider, RetroB
 import CRTOverlay from './components/CRTOverlay';
 import { DecisionInput, DecisionResult, HistoryItem, FACTOR_LABELS } from './types';
 import { calculateDecision } from './services/decisionLogic';
-import { Monitor, Save, RotateCcw, Copy, Info, Home, ArrowRight, Play, Moon, Sun } from 'lucide-react';
+import { Monitor, Save, RotateCcw, Copy, Info, Home, ArrowRight, Play, Moon, Sun, Linkedin, Globe, Mail, Github } from 'lucide-react';
 
 // --- VIEW TYPES ---
 type View = 'HOME' | 'APP' | 'ABOUT';
@@ -28,6 +28,24 @@ const LOADING_MESSAGES = [
   "Weighing short term vs long term...",
   "Detecting biases...",
   "Finalizing recommendation..."
+];
+
+const FOUNDER_LINKS = [
+  {
+    label: 'LinkedIn',
+    href: 'https://www.linkedin.com/in/rohitnagendran84/',
+    Icon: Linkedin,
+  },
+  {
+    label: 'Portfolio',
+    href: 'https://rohit-builds.netlify.app',
+    Icon: Globe,
+  },
+  {
+    label: 'Email',
+    href: 'mailto:rohit84.official@gmail.com',
+    Icon: Mail,
+  },
 ];
 
 export default function App() {
@@ -168,7 +186,7 @@ export default function App() {
            
            <div className="flex gap-4 justify-center">
              <button onClick={() => setCurrentView('ABOUT')} className={`underline retro-cursor-pointer ${darkMode ? 'text-[#00ff00]' : 'text-white hover:text-[#00ff00]'}`}>
-               About the Algorithm
+               About & Founder
              </button>
            </div>
         </div>
@@ -181,9 +199,9 @@ export default function App() {
     return (
       <div className={`min-h-screen flex items-center justify-center p-4 font-mono relative transition-colors duration-500 ${darkMode ? 'bg-[#1a1a1a]' : 'bg-[#008080]'}`}>
         <CRTOverlay />
-        <div className="relative z-10 w-full max-w-2xl">
-          <RetroWindow title="About - Decision Logic.txt" darkMode={darkMode}>
-             <div className={`p-4 min-h-[400px] ${darkMode ? 'bg-black text-[#00ff00]' : 'bg-white text-black'}`}>
+        <div className="relative z-10 w-full max-w-3xl">
+          <RetroWindow title="About - System & Founder.txt" darkMode={darkMode}>
+             <div className={`p-4 min-h-[520px] ${darkMode ? 'bg-black text-[#00ff00]' : 'bg-white text-black'}`}>
                <h2 className={`text-2xl font-bold mb-4 border-b-2 pb-2 ${darkMode ? 'border-[#00ff00]' : 'border-black'}`}>HOW IT WORKS</h2>
                <div className="space-y-4 text-lg">
                  <p>
@@ -201,6 +219,47 @@ export default function App() {
                    We also explicitly calculate your "Gut Feeling" into the score. Your intuition is data, not just noise.
                  </p>
                </div>
+
+               <div className={`mt-6 pt-6 border-t ${darkMode ? 'border-[#00ff00]' : 'border-black'}`}>
+                 <h3 className={`text-xl font-bold mb-3 ${darkMode ? 'text-[#00ff00]' : 'text-black'}`}>FOUNDER</h3>
+                 <div className="space-y-3 text-base">
+                   <p>
+                     Built by Rohit Nagendran. I like making tools that turn fuzzy decisions into crisp outcomes.
+                   </p>
+                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                     {FOUNDER_LINKS.map(({ label, href, Icon }) => (
+                       <a
+                         key={label}
+                         href={href}
+                         target="_blank"
+                         rel="noreferrer"
+                         className={`flex items-center gap-2 px-3 py-2 win95-border text-sm font-bold uppercase retro-cursor-pointer transition-colors ${darkMode ? 'bg-[#111] text-[#00ff00] hover:bg-[#1b1b1b]' : 'bg-[#c0c0c0] text-black hover:bg-gray-200'}`}
+                       >
+                         <Icon size={16} /> {label}
+                       </a>
+                     ))}
+                   </div>
+                   <div className="flex flex-col gap-2">
+                     <a
+                       href="https://github.com/rohtheroos-84"
+                       target="_blank"
+                       rel="noreferrer"
+                       className={`flex items-center gap-2 px-3 py-2 win95-border text-sm font-bold uppercase retro-cursor-pointer transition-colors ${darkMode ? 'bg-[#111] text-[#00ff00] hover:bg-[#1b1b1b]' : 'bg-[#c0c0c0] text-black hover:bg-gray-200'}`}
+                     >
+                       <Github size={16} /> Personal GitHub
+                     </a>
+                     <a
+                       href="https://github.com/rohtheroos-84/YeaNah-Synthesizer-MKII"
+                       target="_blank"
+                       rel="noreferrer"
+                       className={`flex items-center gap-2 px-3 py-2 win95-border text-sm font-bold uppercase retro-cursor-pointer transition-colors ${darkMode ? 'bg-[#111] text-[#00ff00] hover:bg-[#1b1b1b]' : 'bg-[#c0c0c0] text-black hover:bg-gray-200'}`}
+                     >
+                       <Github size={16} /> Project Repo
+                     </a>
+                   </div>
+                 </div>
+               </div>
+
                <div className="mt-8 flex justify-end">
                  <RetroButton onClick={() => setCurrentView('HOME')} darkMode={darkMode}>
                    Close & Return
@@ -232,7 +291,7 @@ export default function App() {
                onClick={() => setCurrentView('ABOUT')} 
                className={`flex items-center gap-1 retro-cursor-pointer text-sm font-bold px-2 py-1 win95-border transition-colors ${darkMode ? 'bg-[#333] text-[#00ff00] hover:bg-[#444]' : 'bg-[#000080] text-white hover:text-gray-200'}`}
             >
-              <Info size={14} /> HELP
+              <Info size={14} /> ABOUT
             </button>
           </div>
           

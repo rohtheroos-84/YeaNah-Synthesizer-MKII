@@ -41,7 +41,7 @@ export const RetroWindow: React.FC<RetroWindowProps> = ({ title, children, icon,
 };
 
 // --- Title Bar Buttons ---
-const TitleBtn = ({ label, darkMode }: { label: string, darkMode?: boolean }) => (
+const TitleBtn = ({ label, darkMode }: { label: React.ReactNode, darkMode?: boolean }) => (
   <button className={cn(
     "w-5 h-5 win95-border flex items-center justify-center active:win95-border-pressed font-bold leading-none hover:cursor-pointer transition-colors",
     darkMode ? "bg-[#333] text-[#00ff00] hover:bg-[#444]" : "bg-[#c0c0c0] text-black hover:bg-gray-300"
@@ -49,7 +49,9 @@ const TitleBtn = ({ label, darkMode }: { label: string, darkMode?: boolean }) =>
     {label}
   </button>
 );
-const MinimizeButton = ({ darkMode }: { darkMode?: boolean }) => <TitleBtn label="_" darkMode={darkMode} />;
+const MinimizeButton = ({ darkMode }: { darkMode?: boolean }) => (
+  <TitleBtn label={<span className="relative -top-px">_</span>} darkMode={darkMode} />
+);
 const MaximizeButton = ({ darkMode }: { darkMode?: boolean }) => <TitleBtn label="□" darkMode={darkMode} />;
 const CloseButton = ({ darkMode }: { darkMode?: boolean }) => <TitleBtn label="×" darkMode={darkMode} />;
 
