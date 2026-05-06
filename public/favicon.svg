@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <rect width="64" height="64" fill="#000000"/>
+  <rect x="4" y="4" width="56" height="56" fill="none" stroke="#00ff00" stroke-width="4"/>
+  <rect x="10" y="10" width="44" height="44" fill="#001a00"/>
+  <text x="32" y="38" font-family="monospace" font-size="18" font-weight="700" text-anchor="middle" fill="#00ff00">Y/N</text>
+  <rect x="12" y="12" width="40" height="40" fill="none" stroke="#00ff00" stroke-width="2" opacity="0.7"/>
+</svg>
