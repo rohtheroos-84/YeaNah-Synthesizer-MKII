@@ -4,6 +4,8 @@ A retro-styled decision support tool that uses rule-based logic to help you make
 
 ![Version](https://img.shields.io/badge/version-1.0-blue)
 
+**Live Site:** https://yeanah.netlify.app
+
 ## What It Does
 
 Paralyzed by choice? The YeaNah-Synthesizer cuts through analysis paralysis using a weighted scoring heuristic. Input your decision constraints, get a binary recommendation in under 2 minutes. Logic-based. Emotion-free.

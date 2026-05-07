@@ -84,7 +84,7 @@ Before or after deploying:
 1. Run `npm install` or `npm ci`.
 2. Run `npm run build`.
 3. Confirm `dist/index.html` and `dist/assets/...js` are generated.
-4. Open the deployed Netlify URL.
+4. Open the deployed Netlify URL: https://yeanah.netlify.app
 5. Start the app, enter a decision question, move all five factor controls, choose a leaning, and run analysis.
 6. Confirm the recommendation renders and "COPY REPORT" works in a secure browser context.
 7. Toggle day/night mode and open the About screen.
